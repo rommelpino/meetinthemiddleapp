@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://mitm.soadev.com/service/HRServiceBeanWS"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://mitm.soadev.com/service/HRServiceBeanWS"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+   <types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://mitm.soadev.com/service/HRServiceBeanWS"
+                    schemaLocation="../xsd/HRServiceBeanWS.xsd"/>
+        </xsd:schema>
+    </types>
+  <message name="HRServiceBeanWS_findJobSDOById">
+        <part name="parameters" element="tns:findJobSDOById"/>
+    </message>
+    <message name="HRServiceBeanWS_findJobSDOByIdResponse">
+        <part name="parameters" element="tns:findJobSDOByIdResponse"/>
+    </message>
+  <portType name="HRServiceBeanWS">
+       <operation name="findJobSDOById">
+            <input message="tns:HRServiceBeanWS_findJobSDOById"/>
+            <output message="tns:HRServiceBeanWS_findJobSDOByIdResponse"/>
+        </operation>
+    </portType>
+    <binding name="HRServiceBeanWSSoapHttp" type="tns:HRServiceBeanWS">
+        <soap:binding style="document"
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="findJobSDOById">
+            <soap:operation soapAction="http://mitm.soadev.com/service/HRServiceBeanWS/findJobSDOById"/>
+            <input>
+                <soap:body use="literal" parts="parameters"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="parameters"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="HRServiceBeanWS">
+        <port name="HRServiceBeanWSSoapHttp"
+              binding="tns:HRServiceBeanWSSoapHttp">
+            <soap:address location="TO_BE_UPDATED"/>
+        </port>
+    </service>
+</definitions>

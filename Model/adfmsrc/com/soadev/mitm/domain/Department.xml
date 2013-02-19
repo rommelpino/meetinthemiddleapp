@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.56.60"
+          id="Department" Package="com.soadev.mitm.domain"
+          BeanClass="com.soadev.mitm.domain.Department" isJavaBased="true">
+  <Attribute Name="departmentId" PrimaryKey="true" Type="java.lang.Long"/>
+  <Attribute Name="departmentName" Type="java.lang.String"/>
+  <Attribute Name="locationId" Type="java.lang.Long"/>
+  <AccessorAttribute id="employeeList" IsCollection="true"
+                     RemoveMethod="removeEmployee" AddMethod="addEmployee"
+                     BeanClass="com.soadev.mitm.domain.Employee"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeEmployee"/>
+      <Property Name="AddMethod" Value="addEmployee"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="manager" IsCollection="false"
+                     BeanClass="com.soadev.mitm.domain.Employee"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Employee"
+                  BeanClass="com.soadev.mitm.domain.Employee" id="addEmployee"
+                  ReturnNodeName="Employee">
+    <ParameterInfo id="employee" Type="com.soadev.mitm.domain.Employee"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Employee"
+                  BeanClass="com.soadev.mitm.domain.Employee"
+                  id="removeEmployee" ReturnNodeName="Employee">
+    <ParameterInfo id="employee" Type="com.soadev.mitm.domain.Employee"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.soadev.mitm.domain.Department"
+                     BeanClass="com.soadev.mitm.domain.Department"
+                     id="Department">
+    <ParameterInfo id="departmentId" Type="java.lang.Long"
+                   isStructured="false"/>
+    <ParameterInfo id="departmentName" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="locationId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="employee" Type="com.soadev.mitm.domain.Employee"
+                   isStructured="true"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.soadev.mitm.domain.Department"
+                     BeanClass="com.soadev.mitm.domain.Department"
+                     id="Department"/>
+</JavaBean>

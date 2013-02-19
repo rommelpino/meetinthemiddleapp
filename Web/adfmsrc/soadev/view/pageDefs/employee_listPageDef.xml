@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="employee_listPageDef"
+                Package="soadev.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SessionEJBLocal"
+              id="SessionEJBLocalIterator"/>
+    <accessorIterator MasterBinding="SessionEJBLocalIterator"
+                      Binds="employeeFindAll" RangeSize="25"
+                      DataControl="SessionEJBLocal"
+                      BeanClass="com.soadev.mitm.domain.Employee"
+                      id="employeeFindAllIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="employeeFindAllIterator" id="employeeFindAll">
+      <nodeDefinition DefName="com.soadev.mitm.domain.Employee" Name="employeeFindAll0">
+        <AttrNames>
+          <Item Value="commissionPct"/>
+          <Item Value="email"/>
+          <Item Value="employeeId"/>
+          <Item Value="firstName"/>
+          <Item Value="hireDate"/>
+          <Item Value="lastName"/>
+          <Item Value="phoneNumber"/>
+          <Item Value="salary"/>
+          <Item Value="status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

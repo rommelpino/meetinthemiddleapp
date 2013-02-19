@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.62.29"
+          id="SessionEJBLocal" Package="com.soadev.mitm.service"
+          BeanClass="com.soadev.mitm.service.SessionEJBLocal"
+          isJavaBased="true">
+  <AccessorAttribute id="employeeFindAll" IsCollection="true"
+                     BeanClass="com.soadev.mitm.domain.Employee"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="departmentFindAll" IsCollection="true"
+                     BeanClass="com.soadev.mitm.domain.Department"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Job"
+                  BeanClass="com.soadev.mitm.domain.Job" id="persistJob"
+                  ReturnNodeName="Job">
+    <ParameterInfo id="job" Type="com.soadev.mitm.domain.Job"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Job"
+                  BeanClass="com.soadev.mitm.domain.Job" id="mergeJob"
+                  ReturnNodeName="Job">
+    <ParameterInfo id="job" Type="com.soadev.mitm.domain.Job"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeJob"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="job" Type="com.soadev.mitm.domain.Job"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Employee"
+                  BeanClass="com.soadev.mitm.domain.Employee"
+                  id="persistEmployee" ReturnNodeName="Employee">
+    <ParameterInfo id="employee" Type="com.soadev.mitm.domain.Employee"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Employee"
+                  BeanClass="com.soadev.mitm.domain.Employee" id="mergeEmployee"
+                  ReturnNodeName="Employee">
+    <ParameterInfo id="employee" Type="com.soadev.mitm.domain.Employee"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeEmployee"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="employee" Type="com.soadev.mitm.domain.Employee"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Department"
+                  BeanClass="com.soadev.mitm.domain.Department"
+                  id="persistDepartment" ReturnNodeName="Department">
+    <ParameterInfo id="department" Type="com.soadev.mitm.domain.Department"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Department"
+                  BeanClass="com.soadev.mitm.domain.Department"
+                  id="mergeDepartment" ReturnNodeName="Department">
+    <ParameterInfo id="department" Type="com.soadev.mitm.domain.Department"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeDepartment"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="department" Type="com.soadev.mitm.domain.Department"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.soadev.mitm.domain.Job"
+                  BeanClass="com.soadev.mitm.domain.Job" id="findAllJobs"
+                  ReturnNodeName="Job"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false" Type="com.soadev.mitm.domain.Job"
+                  BeanClass="com.soadev.mitm.domain.Job" id="findJobById"
+                  ReturnNodeName="Job">
+    <ParameterInfo id="id" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

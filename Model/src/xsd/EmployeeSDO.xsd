@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://mitm.soadev.com/domain"
+           xmlns:tns="http://mitm.soadev.com/domain"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:sdoJava="commonj.sdo/java"
+           sdoJava:package="com.soadev.mitm.domain">
+  <xs:import namespace="commonj.sdo/java"/>
+  <xs:include schemaLocation="JobSDO.xsd"/>
+  <xs:include schemaLocation="DepartmentSDO.xsd"/>
+  <xs:complexType name="EmployeeSDO">
+    <xs:sequence>
+      <xs:element name="commissionPct" type="xs:double" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="employeeId" type="xs:long" minOccurs="0"/>
+      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="hireDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="phoneNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="salary" type="xs:double" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="job" type="tns:JobSDO" minOccurs="0"/>
+      <xs:element name="department" type="tns:DepartmentSDO" minOccurs="0"/>
+      <xs:element name="manager" type="tns:EmployeeSDO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="employeeSDO" type="tns:EmployeeSDO"/>
+</xs:schema>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.62.29" id="DataBindings" SeparateXMLFiles="false"
+             Package="soadev.view" ClientType="Generic">
+  <pageMap>
+    <page path="/employee_list.jsp" usageId="soadev_view_employee_listPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="soadev_view_employee_listPageDef"
+          path="soadev.view.pageDefs.employee_listPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="SessionEJBLocal" path="com.soadev.mitm.domain.SessionEJBLocal"/>
+  </dataControlUsages>
+</Application>
